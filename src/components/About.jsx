@@ -1,23 +1,37 @@
 import React from 'react';
-import { ArrowUpRight, GraduationCap, MapPin, Award, BookOpen } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, MapPin } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData.js';
 
 export default function About({ onOpenResume }) {
   return (
     <section id="about" className="section" style={{ borderTop: '1px solid var(--border-light)' }}>
       <div className="container">
-        <div className="section-accent-line"></div>
-        <div className="tracking-widest-sub" style={{ marginBottom: '0.4rem' }}>
-          01 // About Me
-        </div>
-        <h2 className="section-title">Profile & Background</h2>
-        <p className="section-sub">
-          A dedicated Computer Science undergraduate at AMTICS specializing in frontend architecture, modern JavaScript, and human-centered design systems.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        >
+          <div className="section-accent-line"></div>
+          <div className="tracking-widest-sub" style={{ marginBottom: '0.4rem' }}>
+            01 // About Me
+          </div>
+          <h2 className="section-title">Profile & Background</h2>
+          <p className="section-sub">
+            A dedicated Computer Science undergraduate at AMTICS specializing in frontend architecture, modern JavaScript, and human-centered design systems.
+          </p>
+        </motion.div>
 
         <div className="about-container-split">
           {/* Narrative Story */}
-          <div className="profile-narrative">
+          <motion.div
+            className="profile-narrative"
+            initial={{ opacity: 0, x: -25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
             <p>
               I am currently pursuing a <strong>B.Tech in Computer Science and Engineering</strong> at <strong>Asha M. Tarsadia Institute of Computer Science and Technology (AMTICS)</strong>, affiliated with Uka Tarsadia University.
             </p>
@@ -29,15 +43,27 @@ export default function About({ onOpenResume }) {
             </p>
 
             <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <button onClick={onOpenResume} className="btn-kushal btn-kushal-solid btn-kushal-sm">
+              <motion.button
+                onClick={onOpenResume}
+                className="btn-kushal btn-kushal-solid btn-kushal-sm"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
                 <span>View Full Curriculum Vitae</span>
                 <ArrowUpRight size={15} />
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Education Box */}
-          <div className="about-card-box">
+          <motion.div
+            className="about-card-box"
+            initial={{ opacity: 0, x: 25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            whileHover={{ borderColor: 'var(--border-hover)' }}
+          >
             <div className="tracking-widest-sub" style={{ marginBottom: '1rem' }}>
               Academic Credentials
             </div>
@@ -76,7 +102,7 @@ export default function About({ onOpenResume }) {
               <MapPin size={16} />
               <span>{personalInfo.location}</span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

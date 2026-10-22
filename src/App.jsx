@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
+import Marquee from './components/Marquee.jsx';
 import About from './components/About.jsx';
 import Skills from './components/Skills.jsx';
 import Projects from './components/Projects.jsx';
@@ -8,9 +9,9 @@ import Achievements from './components/Achievements.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import ResumeModal from './components/ResumeModal.jsx';
+import ScrollProgress from './components/ScrollProgress.jsx';
 
 export default function App() {
-  // Theme state: defaults to 'dark', syncs with localStorage
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('portfolio-theme');
     return saved ? saved : 'dark';
@@ -29,6 +30,13 @@ export default function App() {
 
   return (
     <div className="portfolio-app">
+      {/* Top Reading Scroll Progress Animation */}
+      <ScrollProgress />
+
+      {/* Floating Ambient Glow Meshes */}
+      <div className="ambient-glow-mesh"></div>
+      <div className="ambient-glow-mesh-2"></div>
+
       {/* Fixed Navigation Bar */}
       <Navbar
         theme={theme}
@@ -38,29 +46,32 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main>
-        {/* 1. Home / Hero Section */}
+        {/* Home / Hero Section */}
         <Hero onOpenResume={() => setIsResumeOpen(true)} />
 
-        {/* 2. About Section */}
+        {/* Animated Marquee Ticker */}
+        <Marquee />
+
+        {/* 01 // About & Education Section */}
         <About onOpenResume={() => setIsResumeOpen(true)} />
 
-        {/* 3. Skills Section (Technical & Soft Skills) */}
+        {/* 02 // Skills Matrix */}
         <Skills />
 
-        {/* 4. Projects Showcase */}
+        {/* 03 // Selected Works (Projects & Modal) */}
         <Projects />
 
-        {/* 5. Achievements & Certifications */}
+        {/* 04 // Achievements & Milestones */}
         <Achievements />
 
-        {/* 6. Contact Section (Form & Social Links) */}
+        {/* 05 // Reach Out & Contact Form */}
         <Contact />
       </main>
 
       {/* Footer */}
       <Footer />
 
-      {/* Interactive Resume View & Download Modal */}
+      {/* Animated Interactive Resume Modal */}
       <ResumeModal
         isOpen={isResumeOpen}
         onClose={() => setIsResumeOpen(false)}

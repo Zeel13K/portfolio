@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   Code2,
   Atom,
@@ -56,49 +57,82 @@ export default function Skills() {
   return (
     <section id="skills" className="section" style={{ borderTop: '1px solid var(--border-light)' }}>
       <div className="container">
-        <div className="section-accent-line"></div>
-        <div className="tracking-widest-sub" style={{ marginBottom: '0.4rem' }}>
-          02 // Competencies
-        </div>
-        <h2 className="section-title">Skills Matrix</h2>
-        <p className="section-sub">
-          A structured inventory of technical capabilities, developer tooling, and collaborative engineering practices.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        >
+          <div className="section-accent-line"></div>
+          <div className="tracking-widest-sub" style={{ marginBottom: '0.4rem' }}>
+            02 // Competencies
+          </div>
+          <h2 className="section-title">Skills Matrix</h2>
+          <p className="section-sub">
+            A structured inventory of technical capabilities, developer tooling, and collaborative engineering practices.
+          </p>
+        </motion.div>
 
         <div className="skills-matrix-wrap">
-          {categories.map((cat) => (
-            <div key={cat.title} className="skills-category-block">
+          {categories.map((cat, catIdx) => (
+            <motion.div
+              key={cat.title}
+              className="skills-category-block"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5, delay: catIdx * 0.1 }}
+            >
               <div className="skills-category-title">{cat.title}</div>
               <div className="skills-pills-flow">
                 {cat.items.map((skill) => {
                   const Icon = iconMap[skill.icon] || Code2;
                   return (
-                    <div key={skill.name} className="skill-matrix-pill">
+                    <motion.div
+                      key={skill.name}
+                      className="skill-matrix-pill"
+                      whileHover={{ scale: 1.04, y: -2, borderColor: 'var(--border-hover)' }}
+                      whileTap={{ scale: 0.98 }}
+                      transition={{ type: 'spring', damping: 18, stiffness: 350 }}
+                    >
                       <Icon size={16} />
                       <span>{skill.name}</span>
                       <span className="skill-pill-percent">{skill.proficiency}%</span>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
           ))}
 
           {/* Soft Skills Category */}
-          <div className="skills-category-block">
+          <motion.div
+            className="skills-category-block"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <div className="skills-category-title">Soft Skills & Practices</div>
             <div className="skills-pills-flow">
               {softSkills.map((skill) => {
                 const Icon = iconMap[skill.icon] || Lightbulb;
                 return (
-                  <div key={skill.name} className="skill-matrix-pill" title={skill.description}>
+                  <motion.div
+                    key={skill.name}
+                    className="skill-matrix-pill"
+                    title={skill.description}
+                    whileHover={{ scale: 1.04, y: -2, borderColor: 'var(--border-hover)' }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: 'spring', damping: 18, stiffness: 350 }}
+                  >
                     <Icon size={16} />
                     <span>{skill.name}</span>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

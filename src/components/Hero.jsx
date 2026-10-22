@@ -1,5 +1,6 @@
 import React from 'react';
-import { Download, ArrowUpRight, Mail, Sparkles, FolderGit2, BookOpen } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Download, ArrowUpRight, Mail, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, TwitterIcon } from './Icons.jsx';
 import { personalInfo } from '../data/portfolioData.js';
 
@@ -44,122 +45,169 @@ export default function Hero({ onOpenResume }) {
     }
   ];
 
+  // Framer Motion Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        damping: 24,
+        stiffness: 260
+      }
+    }
+  };
+
   return (
     <section id="home" className="hero-kushal">
       <div className="container">
-        {/* Availability Badge */}
-        <div className="status-badge-kushal">
-          <span className="pulse-emerald"></span>
-          <span>Available for Summer Internships & Opportunities</span>
-        </div>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Availability Badge */}
+          <motion.div variants={itemVariants} className="status-badge-kushal">
+            <span className="pulse-emerald"></span>
+            <span>Available for Summer Internships & Opportunities</span>
+          </motion.div>
 
-        {/* Giant Headline - Kushal Style */}
-        <h1 className="hero-giant-name">
-          Zeel <br /> Kaklotar
-        </h1>
-
-        {/* Lead Subtitle */}
-        <p className="hero-subtitle-lead">
-          {personalInfo.tagline} at <strong>AMTICS</strong>. Focused on modern React engineering, component design systems, and building intuitive, scalable digital products.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="hero-cta-group">
-          <a
-            href={personalInfo.resumeUrl}
-            download="Zeel_Kaklotar_Resume.pdf"
-            className="btn-kushal btn-kushal-solid"
-            title="Download Zeel's Resume in PDF"
+          {/* Giant Headline */}
+          <motion.h1
+            variants={itemVariants}
+            className="hero-giant-name"
           >
-            <Download size={17} />
-            <span>Download Résumé (PDF)</span>
-          </a>
+            Zeel <br /> Kaklotar
+          </motion.h1>
 
-          <button onClick={onOpenResume} className="btn-kushal btn-kushal-outline">
-            <Sparkles size={17} />
-            <span>Interactive Preview</span>
-          </button>
+          {/* Lead Subtitle */}
+          <motion.p variants={itemVariants} className="hero-subtitle-lead">
+            {personalInfo.tagline} at <strong>AMTICS</strong>. Focused on modern React engineering, component design systems, and building intuitive, scalable digital products.
+          </motion.p>
 
-          <a
-            href="#projects"
-            onClick={(e) => handleScrollTo(e, '#projects')}
-            className="btn-kushal btn-kushal-outline"
-          >
-            <span>Explore Projects</span>
-            <ArrowUpRight size={17} />
-          </a>
-        </div>
+          {/* Action Buttons */}
+          <motion.div variants={itemVariants} className="hero-cta-group">
+            <motion.a
+              href={personalInfo.resumeUrl}
+              download="Zeel_Kaklotar_Resume.pdf"
+              className="btn-kushal btn-kushal-solid"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              title="Download Zeel's Resume in PDF"
+            >
+              <Download size={17} />
+              <span>Download Résumé (PDF)</span>
+            </motion.a>
 
-        {/* Social Links Strip */}
-        <div className="hero-social-strip">
-          <span className="tracking-widest-sub">Connect:</span>
-          <a
-            href={personalInfo.socialLinks.github}
-            target="_blank"
-            rel="noreferrer"
-            className="social-link-btn"
-            aria-label="GitHub Profile"
-          >
-            <GithubIcon size={19} />
-          </a>
-          <a
-            href={personalInfo.socialLinks.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="social-link-btn"
-            aria-label="LinkedIn Profile"
-          >
-            <LinkedinIcon size={19} />
-          </a>
-          <a
-            href={personalInfo.socialLinks.twitter}
-            target="_blank"
-            rel="noreferrer"
-            className="social-link-btn"
-            aria-label="Twitter Profile"
-          >
-            <TwitterIcon size={19} />
-          </a>
-          <a
-            href={personalInfo.socialLinks.email}
-            className="social-link-btn"
-            aria-label="Send Email"
-          >
-            <Mail size={19} />
-          </a>
-        </div>
+            <motion.button
+              onClick={onOpenResume}
+              className="btn-kushal btn-kushal-outline"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <Sparkles size={17} />
+              <span>Interactive Preview</span>
+            </motion.button>
 
-        {/* Numbered Overview Cards (Inspired by Kushal's site) */}
-        <div className="overview-grid">
-          {overviewCards.map((c) => (
-            <div key={c.num} className="overview-card">
-              <div>
-                <div className="overview-number">{c.num}</div>
-                <div className="overview-tag">{c.tag}</div>
-                <h3 className="overview-heading">{c.heading}</h3>
-                <p className="overview-desc">{c.desc}</p>
-              </div>
-              <a
-                href={c.target}
-                onClick={(e) => handleScrollTo(e, c.target)}
-                className="overview-link"
+            <motion.a
+              href="#projects"
+              onClick={(e) => handleScrollTo(e, '#projects')}
+              className="btn-kushal btn-kushal-outline"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <span>Explore Projects</span>
+              <ArrowUpRight size={17} />
+            </motion.a>
+          </motion.div>
+
+          {/* Social Links Strip */}
+          <motion.div variants={itemVariants} className="hero-social-strip">
+            <span className="tracking-widest-sub">Connect:</span>
+            {[
+              { icon: GithubIcon, href: personalInfo.socialLinks.github, label: 'GitHub' },
+              { icon: LinkedinIcon, href: personalInfo.socialLinks.linkedin, label: 'LinkedIn' },
+              { icon: TwitterIcon, href: personalInfo.socialLinks.twitter, label: 'Twitter' },
+            ].map((soc, i) => {
+              const Icon = soc.icon;
+              return (
+                <motion.a
+                  key={i}
+                  href={soc.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-link-btn"
+                  aria-label={soc.label}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.92 }}
+                >
+                  <Icon size={19} />
+                </motion.a>
+              );
+            })}
+            <motion.a
+              href={personalInfo.socialLinks.email}
+              className="social-link-btn"
+              aria-label="Email"
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.92 }}
+            >
+              <Mail size={19} />
+            </motion.a>
+          </motion.div>
+
+          {/* Numbered Overview Cards */}
+          <motion.div variants={itemVariants} className="overview-grid">
+            {overviewCards.map((c) => (
+              <motion.div
+                key={c.num}
+                className="overview-card"
+                whileHover={{ y: -6, borderColor: 'var(--border-hover)' }}
+                transition={{ type: 'spring', damping: 20, stiffness: 300 }}
               >
-                <span>{c.cta}</span>
-                <ArrowUpRight size={14} />
-              </a>
-            </div>
-          ))}
-        </div>
+                <div>
+                  <div className="overview-number">{c.num}</div>
+                  <div className="overview-tag">{c.tag}</div>
+                  <h3 className="overview-heading">{c.heading}</h3>
+                  <p className="overview-desc">{c.desc}</p>
+                </div>
+                <a
+                  href={c.target}
+                  onClick={(e) => handleScrollTo(e, c.target)}
+                  className="overview-link"
+                >
+                  <span>{c.cta}</span>
+                  <ArrowUpRight size={14} />
+                </a>
+              </motion.div>
+            ))}
+          </motion.div>
 
-        {/* Stats Strip */}
-        <div className="stats-strip">
-          {personalInfo.stats.map((s, idx) => (
-            <div key={idx} className="stat-strip-item">
-              <div className="stat-strip-val">{s.value}</div>
-              <div className="stat-strip-label">{s.label}</div>
-            </div>
-          ))}
-        </div>
+          {/* Stats Strip */}
+          <motion.div
+            variants={itemVariants}
+            className="stats-strip"
+          >
+            {personalInfo.stats.map((s, idx) => (
+              <div key={idx} className="stat-strip-item">
+                <div className="stat-strip-val">{s.value}</div>
+                <div className="stat-strip-label">{s.label}</div>
+              </div>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

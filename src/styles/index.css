@@ -995,7 +995,102 @@ input, textarea {
   opacity: 0.6;
 }
 
-/* Responsive */
+/* Marquee Ticker - Kushal Style */
+.marquee-container {
+  overflow: hidden;
+  display: flex;
+  user-select: none;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  background: var(--pill-bg);
+  position: relative;
+}
+
+.marquee-content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: 2.5rem;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - 2.5rem)); }
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.marquee-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-green);
+}
+
+/* Scroll Progress Bar at Top */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #34d399, #38bdf8, #818cf8);
+  transform-origin: 0%;
+  z-index: 1100;
+}
+
+/* Ambient Background Glow */
+.ambient-glow-mesh {
+  position: fixed;
+  top: 20%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.06) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: slowFloat 10s ease-in-out infinite alternate;
+}
+
+.ambient-glow-mesh-2 {
+  position: fixed;
+  bottom: 15%;
+  left: 5%;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: slowFloat 12s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes slowFloat {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-25px) scale(1.05); }
+  100% { transform: translateY(15px) scale(0.95); }
+}
 @media (max-width: 1024px) {
   .overview-grid {
     grid-template-columns: repeat(2, 1fr);
