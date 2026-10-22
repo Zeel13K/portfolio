@@ -1,31 +1,29 @@
 import React from 'react';
-import { Trophy, Award, Star } from 'lucide-react';
+import { Trophy, Award, Star, ArrowUpRight } from 'lucide-react';
 import { achievements } from '../data/portfolioData.js';
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="section">
+    <section id="achievements" className="section" style={{ borderTop: '1px solid var(--border-light)' }}>
       <div className="container">
-        <div className="section-header">
-          <div className="section-badge">
-            <Trophy size={15} />
-            <span>Milestones</span>
-          </div>
-          <h2 className="section-title">
-            Achievements & <span className="gradient-text">Certifications</span>
-          </h2>
-          <p className="section-subtitle">
-            Notable honors, academic rankings, hackathons, and certifications earned during my tenure at AMTICS.
-          </p>
+        <div className="section-accent-line"></div>
+        <div className="tracking-widest-sub" style={{ marginBottom: '0.4rem' }}>
+          04 // Milestones
         </div>
+        <h2 className="section-title">Achievements & Honors</h2>
+        <p className="section-sub">
+          Recognitions, hackathon podiums, certifications, and academic excellence awards earned throughout my degree at AMTICS.
+        </p>
 
-        <div className="achievements-grid">
+        <div className="overview-grid" style={{ marginTop: '2.5rem' }}>
           {achievements.map((item, idx) => (
-            <div key={idx} className="achievement-card">
-              <span className="achievement-badge">{item.year}</span>
-              <h3 className="achievement-title">{item.title}</h3>
-              <div className="achievement-org">{item.organization}</div>
-              <p className="achievement-desc">{item.description}</p>
+            <div key={idx} className="overview-card">
+              <div>
+                <div className="overview-number">{item.year}</div>
+                <div className="overview-tag">{item.organization}</div>
+                <h3 className="overview-heading" style={{ fontSize: '1.05rem' }}>{item.title}</h3>
+                <p className="overview-desc">{item.description}</p>
+              </div>
             </div>
           ))}
         </div>

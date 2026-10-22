@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, Menu, X, FileText, Code2 } from 'lucide-react';
+import { Sun, Moon, Menu, X, FileText, ArrowUpRight } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData.js';
 
 export default function Navbar({ theme, toggleTheme, onOpenResume }) {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
@@ -12,16 +11,14 @@ export default function Navbar({ theme, toggleTheme, onOpenResume }) {
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Achievements', href: '#achievements' },
     { label: 'Contact', href: '#contact' },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-
-      // Section spy
-      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      const sections = ['home', 'about', 'skills', 'projects', 'achievements', 'contact'];
+      const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -51,83 +48,86 @@ export default function Navbar({ theme, toggleTheme, onOpenResume }) {
 
   return (
     <>
-      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="container nav-container">
-          <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="nav-brand">
-            <div className="brand-icon">
-              <Code2 size={22} />
-            </div>
-            <span>{personalInfo.name}</span>
+      <header className="navbar-kushal">
+        <div className="container navbar-container">
+          {/* Brand - Kushal Style */}
+          <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="nav-brand-group">
+            <span className="nav-brand-title">{personalInfo.name}</span>
+            <span className="nav-brand-subtitle">Full Stack Developer • AMTICS</span>
           </a>
 
-          {/* Desktop Nav Items */}
-          <ul className="nav-links">
-            {navItems.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className={`nav-link ${activeSection === item.href.slice(1) ? 'active' : ''}`}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+          {/* Centered Navigation Links */}
+          <ul className="nav-links-center">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.slice(1);
+              return (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className={`nav-link-item ${isActive ? 'active' : ''}`}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
-          {/* Desktop Actions */}
-          <div className="nav-actions">
+          {/* Right Action Buttons */}
+          <div className="nav-actions-right">
             <button
               onClick={toggleTheme}
-              className="theme-toggle-btn"
+              className="theme-btn-round"
               title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
               aria-label="Toggle theme"
             >
-              {theme === 'dark' ? <Sun size={19} /> : <Moon size={19} />}
+              {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
             </button>
 
-            <button onClick={onOpenResume} className="btn btn-outline btn-sm">
-              <FileText size={16} />
-              <span>Resume</span>
+            <button onClick={onOpenResume} className="btn-kushal btn-kushal-outline btn-kushal-sm">
+              <FileText size={15} />
+              <span>Résumé</span>
             </button>
 
             <button
-              className="mobile-menu-btn"
+              className="mobile-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
-      </nav>
+      </header>
 
       {/* Mobile Drawer */}
-      <div className={`mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
-        <ul className="mobile-nav-links">
+      <div className={`mobile-drawer-kushal ${mobileMenuOpen ? 'open' : ''}`}>
+        <ul className="mobile-menu-items">
           {navItems.map((item) => (
             <li key={item.label}>
               <a
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`mobile-nav-link ${activeSection === item.href.slice(1) ? 'active' : ''}`}
+                className={`mobile-menu-link ${activeSection === item.href.slice(1) ? 'active' : ''}`}
               >
                 {item.label}
               </a>
             </li>
           ))}
         </ul>
-        <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem' }}>
+
+        <div style={{ marginTop: '1.75rem', display: 'flex', gap: '0.75rem' }}>
           <button
             onClick={() => {
               setMobileMenuOpen(false);
               onOpenResume();
             }}
-            className="btn btn-primary"
-            style={{ flex: 1 }}
+            className="btn-kushal btn-kushal-solid btn-kushal-sm"
+            style={{ width: '100%' }}
           >
-            <FileText size={18} />
-            <span>View Resume</span>
+            <FileText size={16} />
+            <span>View Résumé</span>
           </button>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Mail, Heart, Code2 } from 'lucide-react';
+import { ArrowUp, Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, TwitterIcon } from './Icons.jsx';
 import { personalInfo } from '../data/portfolioData.js';
 
@@ -11,34 +11,35 @@ export default function Footer() {
   const navLinks = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Achievements', href: '#achievements' },
+    { label: 'Skills Matrix', href: '#skills' },
+    { label: 'Selected Works', href: '#projects' },
+    { label: 'Milestones', href: '#achievements' },
     { label: 'Contact', href: '#contact' },
   ];
 
   return (
-    <footer className="footer">
+    <footer className="footer-kushal">
       <div className="container">
-        <div className="footer-top">
-          {/* Brand & Summary */}
-          <div className="footer-brand">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem' }}>
-              <div className="brand-icon" style={{ width: '32px', height: '32px' }}>
-                <Code2 size={18} />
-              </div>
-              <h3 style={{ margin: 0 }}>{personalInfo.name}</h3>
-            </div>
-            <p>
-              Computer Science student at AMTICS passionate about crafting responsive, performant, and user-friendly web applications.
+        <div className="footer-top-grid">
+          {/* Brand Info */}
+          <div>
+            <h3 style={{ fontSize: '1.6rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '-0.02em', marginBottom: '0.4rem' }}>
+              {personalInfo.name}
+            </h3>
+            <p style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.2em', opacity: 0.5, marginBottom: '1.25rem' }}>
+              Full Stack Developer • AMTICS
             </p>
-            <div className="hero-socials">
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.925rem', lineHeight: 1.7, maxWidth: '380px', fontWeight: 300, marginBottom: '2rem' }}>
+              Building accessible, responsive, and performance-focused web solutions with React, JavaScript, and modern web architectures.
+            </p>
+
+            <div className="hero-social-strip">
               <a
                 href={personalInfo.socialLinks.github}
                 target="_blank"
                 rel="noreferrer"
-                className="social-pill"
-                aria-label="GitHub Profile"
+                className="social-link-btn"
+                aria-label="GitHub"
               >
                 <GithubIcon size={18} />
               </a>
@@ -46,8 +47,8 @@ export default function Footer() {
                 href={personalInfo.socialLinks.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="social-pill"
-                aria-label="LinkedIn Profile"
+                className="social-link-btn"
+                aria-label="LinkedIn"
               >
                 <LinkedinIcon size={18} />
               </a>
@@ -55,25 +56,27 @@ export default function Footer() {
                 href={personalInfo.socialLinks.twitter}
                 target="_blank"
                 rel="noreferrer"
-                className="social-pill"
-                aria-label="Twitter Profile"
+                className="social-link-btn"
+                aria-label="Twitter"
               >
                 <TwitterIcon size={18} />
               </a>
               <a
                 href={personalInfo.socialLinks.email}
-                className="social-pill"
-                aria-label="Send Email"
+                className="social-link-btn"
+                aria-label="Email"
               >
                 <Mail size={18} />
               </a>
             </div>
           </div>
 
-          {/* Quick Navigation */}
+          {/* Quick Links */}
           <div>
-            <h4 className="footer-links-title">Quick Navigation</h4>
-            <ul className="footer-links-list">
+            <div className="tracking-widest-sub" style={{ marginBottom: '1.5rem' }}>
+              Sections
+            </div>
+            <ul className="footer-nav-list">
               {navLinks.slice(0, 3).map((link) => (
                 <li key={link.label}>
                   <a href={link.href}>{link.label}</a>
@@ -82,10 +85,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* More Links */}
+          {/* Directory */}
           <div>
-            <h4 className="footer-links-title">Sections</h4>
-            <ul className="footer-links-list">
+            <div className="tracking-widest-sub" style={{ marginBottom: '1.5rem' }}>
+              Direct Links
+            </div>
+            <ul className="footer-nav-list">
               {navLinks.slice(3).map((link) => (
                 <li key={link.label}>
                   <a href={link.href}>{link.label}</a>
@@ -100,21 +105,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Footer Bottom */}
-        <div className="footer-bottom">
+        {/* Bottom Bar */}
+        <div className="footer-bottom-row">
           <div>
-            &copy; {new Date().getFullYear()} {personalInfo.name}. Built with React JS & Vite.
+            &copy; {new Date().getFullYear()} {personalInfo.name} • Asha M. Tarsadia Institute of Computer Science and Technology (AMTICS)
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-            <span>Crafted with</span>
-            <Heart size={14} color="#ef4444" fill="#ef4444" />
-            <span>at AMTICS</span>
-          </div>
-
-          <button onClick={scrollToTop} className="back-to-top" aria-label="Back to Top">
-            <span>Back to Top</span>
-            <ArrowUp size={16} />
+          <button onClick={scrollToTop} className="overview-link" style={{ cursor: 'pointer' }}>
+            <span>Back to Summit</span>
+            <ArrowUp size={14} />
           </button>
         </div>
       </div>
