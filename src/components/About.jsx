@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, MapPin } from 'lucide-react';
-import { personalInfo } from '../data/portfolioData.js';
+import { ArrowUpRight, MapPin, GraduationCap } from 'lucide-react';
+import { personalInfo, educationList } from '../data/portfolioData.js';
 
 export default function About({ onOpenResume }) {
   return (
@@ -17,9 +17,9 @@ export default function About({ onOpenResume }) {
           <div className="tracking-widest-sub" style={{ marginBottom: '0.4rem' }}>
             01 // About Me
           </div>
-          <h2 className="section-title">Profile & Background</h2>
+          <h2 className="section-title">Profile & Education</h2>
           <p className="section-sub">
-            A dedicated Computer Science undergraduate at AMTICS specializing in frontend architecture, modern JavaScript, and human-centered design systems.
+            B.Tech CSE student with a Diploma in Information Technology and hands-on experience in web development and application engineering.
           </p>
         </motion.div>
 
@@ -33,13 +33,13 @@ export default function About({ onOpenResume }) {
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <p>
-              I am currently pursuing a <strong>B.Tech in Computer Science and Engineering</strong> at <strong>Asha M. Tarsadia Institute of Computer Science and Technology (AMTICS)</strong>, affiliated with Uka Tarsadia University.
+              I am a <strong>B.Tech CSE student</strong> at <strong>Uka Tarsadia University (UTU), Maliba</strong>, with a solid foundational <strong>Diploma in Information Technology (CGPA: 8.76 / 10)</strong> and practical experience in web development and software application engineering.
             </p>
             <p>
-              My passion lies at the intersection of robust frontend architecture and polished design. Whether building student utility portals, real-time productivity apps, or open-source developer tools, I focus on performance, semantic structure, accessibility, and delightful interactivity.
+              I have practical experience building responsive websites, client web applications, and database-driven management systems such as the <strong>Mavtar Printing Press Management System</strong> and the <strong>Swstik Numerology</strong> consultation platform.
             </p>
             <p>
-              Alongside frontend technologies like React, JavaScript (ES6+), and Tailwind CSS, I have hands-on experience designing RESTful APIs with Node.js and managing databases with MongoDB and MySQL.
+              During my web development training at <strong>AISECT</strong>, I contributed to the development and maintenance of a web-based Student Management System using PHP and MySQL. I am driven by software development, database administration, and building reliable, scalable digital solutions.
             </p>
 
             <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -64,38 +64,25 @@ export default function About({ onOpenResume }) {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             whileHover={{ borderColor: 'var(--border-hover)' }}
           >
-            <div className="tracking-widest-sub" style={{ marginBottom: '1rem' }}>
-              Academic Credentials
+            <div className="tracking-widest-sub" style={{ marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <GraduationCap size={15} />
+              <span>Academic Qualifications</span>
             </div>
 
             <div className="education-timeline-kushal">
-              <div className="edu-item-kushal">
-                <div className="edu-bullet"></div>
-                <div>
-                  <div className="edu-period">2023 – 2027 (Expected)</div>
-                  <h3 className="edu-degree">B.Tech in Computer Science & Engineering</h3>
-                  <div className="edu-inst">
-                    Asha M. Tarsadia Institute of Computer Science & Technology (AMTICS)
-                  </div>
-                  <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                    CGPA: <strong>8.8 / 10</strong> • Core Modules: Data Structures, Web Engineering, DBMS, Computer Networks.
-                  </div>
-                </div>
-              </div>
-
-              <div className="edu-item-kushal">
-                <div className="edu-bullet"></div>
-                <div>
-                  <div className="edu-period">2021 – 2023</div>
-                  <h3 className="edu-degree">Higher Secondary Certificate (HSC)</h3>
-                  <div className="edu-inst">
-                    Gujarat Secondary & Higher Secondary Board
-                  </div>
-                  <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                    Majors: Physics, Chemistry & Mathematics (PCM) • Distinction.
+              {educationList.map((edu, idx) => (
+                <div key={idx} className="edu-item-kushal">
+                  <div className="edu-bullet"></div>
+                  <div>
+                    <div className="edu-period">{edu.period} • <span style={{ color: 'var(--accent-green)' }}>{edu.status}</span></div>
+                    <h3 className="edu-degree">{edu.degree}</h3>
+                    <div className="edu-inst">{edu.institution}</div>
+                    <div style={{ marginTop: '0.4rem', fontSize: '0.825rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                      {edu.details}
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
 
             <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-light)', display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>

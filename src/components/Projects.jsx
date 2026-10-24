@@ -18,7 +18,7 @@ export default function Projects() {
         >
           <div className="section-accent-line"></div>
           <div className="tracking-widest-sub" style={{ marginBottom: '0.4rem' }}>
-            03 // Selected Works
+            04 // Selected Works
           </div>
           <h2 className="section-title">Featured Projects</h2>
           <p className="section-sub">

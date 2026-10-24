@@ -14,7 +14,7 @@ export default function Achievements() {
         >
           <div className="section-accent-line"></div>
           <div className="tracking-widest-sub" style={{ marginBottom: '0.4rem' }}>
-            04 // Milestones
+            05 // Milestones
           </div>
           <h2 className="section-title">Achievements & Honors</h2>
           <p className="section-sub">

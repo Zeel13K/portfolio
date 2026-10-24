@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, ArrowUpRight, Mail, Sparkles } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, TwitterIcon } from './Icons.jsx';
+import { GithubIcon, LinkedinIcon } from './Icons.jsx';
 import { personalInfo } from '../data/portfolioData.js';
 
 export default function Hero({ onOpenResume }) {
@@ -15,33 +15,33 @@ export default function Hero({ onOpenResume }) {
       num: '01',
       tag: 'Background',
       heading: 'Who I Am',
-      desc: 'Computer Science student at AMTICS passionate about architecting responsive, performant, and accessible web experiences.',
+      desc: 'B.Tech CSE student at UTU Maliba with a Diploma in IT (8.76 CGPA), passionate about web development and practical technology solutions.',
       cta: 'Profile',
       target: '#about'
     },
     {
       num: '02',
-      tag: 'Arsenal',
-      heading: 'What I Build',
-      desc: 'End-to-end full-stack applications with React, modern JavaScript, Tailwind CSS, Node.js, and MongoDB.',
-      cta: 'Skills Matrix',
-      target: '#skills'
+      tag: 'Experience',
+      heading: 'Work & Training',
+      desc: 'Freelance web development experience and AISECT trainee background developing full-stack database-driven management systems.',
+      cta: 'Experience',
+      target: '#experience'
     },
     {
       num: '03',
       tag: 'Selected Works',
-      heading: 'Projects',
-      desc: 'Curated collection of academic portals, community hubs, productivity boards, and open-source tools.',
+      heading: 'Key Projects',
+      desc: 'Production management systems including Mavtar Printing Press, Swstik Numerology (Vercel), and Student Management System.',
       cta: 'View Works',
       target: '#projects'
     },
     {
       num: '04',
-      tag: 'Milestones',
-      heading: 'Education & Honors',
-      desc: 'Consistently maintaining an 8.8 CGPA at AMTICS, hackathon finalist, and active open-source contributor.',
-      cta: 'Achievements',
-      target: '#achievements'
+      tag: 'Arsenal',
+      heading: 'Skills Matrix',
+      desc: 'Hands-on programming with JavaScript, PHP, Python, React.js, Vite, PostgreSQL, MySQL, and modern cloud deployment tools.',
+      cta: 'Skills Matrix',
+      target: '#skills'
     }
   ];
 
@@ -81,7 +81,7 @@ export default function Hero({ onOpenResume }) {
           {/* Availability Badge */}
           <motion.div variants={itemVariants} className="status-badge-kushal">
             <span className="pulse-emerald"></span>
-            <span>Available for Summer Internships & Opportunities</span>
+            <span>Available for Web Development & Software Engineering Opportunities</span>
           </motion.div>
 
           {/* Giant Headline */}
@@ -94,7 +94,7 @@ export default function Hero({ onOpenResume }) {
 
           {/* Lead Subtitle */}
           <motion.p variants={itemVariants} className="hero-subtitle-lead">
-            {personalInfo.tagline} at <strong>AMTICS</strong>. Focused on modern React engineering, component design systems, and building intuitive, scalable digital products.
+            {personalInfo.tagline} at <strong>{personalInfo.college}</strong>. {personalInfo.subtitle}
           </motion.p>
 
           {/* Action Buttons */}
@@ -118,7 +118,7 @@ export default function Hero({ onOpenResume }) {
               whileTap={{ scale: 0.97 }}
             >
               <Sparkles size={17} />
-              <span>Interactive Preview</span>
+              <span>Interactive Resume</span>
             </motion.button>
 
             <motion.a
@@ -139,7 +139,6 @@ export default function Hero({ onOpenResume }) {
             {[
               { icon: GithubIcon, href: personalInfo.socialLinks.github, label: 'GitHub' },
               { icon: LinkedinIcon, href: personalInfo.socialLinks.linkedin, label: 'LinkedIn' },
-              { icon: TwitterIcon, href: personalInfo.socialLinks.twitter, label: 'Twitter' },
             ].map((soc, i) => {
               const Icon = soc.icon;
               return (

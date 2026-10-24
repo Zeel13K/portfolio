@@ -12,47 +12,83 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 5 0 obj
-<< /Length 2018 >>
+<< /Length 4624 >>
 stream
 BT
-/F1 22 Tf
-50 730 Td (ZEEL KAKLOTAR) Tj
-/F1 12 Tf
-0 -24 Td (Computer Science Student & Full Stack Web Developer | AMTICS) Tj
-0 -16 Td (Email: zeel.kaklotar@example.com | GitHub: github.com/zeelkaklotar | LinkedIn: linkedin.com/in/zeelkaklotar) Tj
-0 -30 Td (------------------------------------------------------------------------------------------------------------------) Tj
-/F1 14 Tf
-0 -25 Td (EDUCATION) Tj
-/F1 11 Tf
-0 -18 Td (B.Tech in Computer Science and Engineering - AMTICS, Uka Tarsadia University (2023 - 2027)) Tj
-0 -16 Td (CGPA: 8.8 / 10 | Relevant Coursework: Data Structures, Web Technologies, Database Systems) Tj
-/F1 14 Tf
-0 -28 Td (TECHNICAL SKILLS) Tj
-/F1 11 Tf
-0 -18 Td (Frontend: React.js, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Responsive Design) Tj
-0 -16 Td (Backend & Databases: Node.js, Express.js, RESTful APIs, MongoDB, MySQL) Tj
-0 -16 Td (Tools & Platforms: Git, GitHub, Vite, VS Code, Postman, Vercel, Netlify) Tj
-0 -16 Td (Soft Skills: Problem Solving, Team Collaboration, Agile Mindset, Technical Documentation) Tj
-/F1 14 Tf
-0 -28 Td (FEATURED PROJECTS) Tj
-/F1 12 Tf
-0 -18 Td (1. EduTrack - Student Academic & Attendance Portal (React.js, Node.js, MongoDB)) Tj
+/F1 20 Tf
+50 740 Td (ZEEL KAKLOTAR) Tj
 /F1 10 Tf
-0 -14 Td (- Built an interactive academic tracking system with attendance alerts and grade calculators.) Tj
+0 -20 Td (Surat, Gujarat, India  |  +91 75672 19666  |  kaklotrzeel@gmail.com) Tj
+0 -14 Td (GitHub: https://github.com/Zeel13K  |  Portfolio: https://github.com/Zeel13K) Tj
+0 -20 Td (------------------------------------------------------------------------------------------------------------------) Tj
 /F1 12 Tf
-0 -20 Td (2. CampusConnect - University Community & Resource Platform (React.js, CSS3)) Tj
-/F1 10 Tf
-0 -14 Td (- Developed a peer-to-peer note sharing, event notifications, and study group organizer.) Tj
+0 -18 Td (PROFESSIONAL SUMMARY) Tj
+/F1 9 Tf
+0 -14 Td (B.Tech CSE student with a Diploma in IT and hands-on experience in web development and application development.) Tj
+0 -12 Td (Skilled in building responsive websites and web-based management systems using modern technologies.) Tj
+0 -12 Td (Interested in software development, database management, and developing practical technology solutions.) Tj
 /F1 12 Tf
-0 -20 Td (3. DevFolio - Developer Portfolio Generator (React.js, Vite)) Tj
+0 -22 Td (EDUCATION) Tj
 /F1 10 Tf
-0 -14 Td (- Created customizable portfolio templates with instant live previews and GitHub Pages export.) Tj
-/F1 14 Tf
-0 -28 Td (ACHIEVEMENTS & CERTIFICATIONS) Tj
-/F1 11 Tf
-0 -18 Td (- Top Performer at College Web Development Hackathon (AMTICS)) Tj
-0 -16 Td (- Certified in Modern Full Stack Web Development) Tj
-0 -16 Td (- Active open source contributor with 50+ GitHub contributions) Tj
+0 -15 Td (Uka Tarsadia University (UTU), Maliba                                                    2026 - 2029) Tj
+/F1 9 Tf
+0 -12 Td (Bachelor of Technology (B.Tech) in Computer Science and Engineering (CSE)                Pursuing) Tj
+/F1 10 Tf
+0 -15 Td (Uka Tarsadia University (UTU), Maliba                                                    2022 - 2025) Tj
+/F1 9 Tf
+0 -12 Td (Diploma in Information Technology                                                        CGPA: 8.76/10) Tj
+/F1 10 Tf
+0 -15 Td (Gujarat Secondary and Higher Secondary Education Board                                           2022) Tj
+/F1 9 Tf
+0 -12 Td (Class 10 (Secondary Education)                                                           80.66%) Tj
+/F1 12 Tf
+0 -22 Td (WORK EXPERIENCE) Tj
+/F1 10 Tf
+0 -15 Td (Web Development Trainee - AISECT                                               May 2024 - June 2024) Tj
+/F1 9 Tf
+0 -12 Td (- Gained practical experience with Internet fundamentals and PHP programming.) Tj
+0 -11 Td (- Contributed to the development and maintenance of a Student Management System.) Tj
+0 -11 Td (- Assisted in implementing features, troubleshooting issues, and improving application functionality.) Tj
+0 -11 Td (- Developed an understanding of web applications and collaborative software development workflows.) Tj
+/F1 10 Tf
+0 -15 Td (Freelance Web Developer / Independent Projects                                       2024 - Present) Tj
+/F1 9 Tf
+0 -12 Td (- Designed and developed responsive websites and web applications based on project requirements.) Tj
+0 -11 Td (- Worked on user interfaces, application functionality, and integration of online services.) Tj
+0 -11 Td (- Practiced frontend development, debugging, cross-browser testing, and project planning.) Tj
+/F1 12 Tf
+0 -22 Td (PROJECTS) Tj
+/F1 10 Tf
+0 -15 Td (Mavtar Printing Press Management System                                                          2026) Tj
+/F1 9 Tf
+0 -12 Td (- Web-based management system to organize printing press business records, invoices, and payments.) Tj
+0 -11 Td (- Implemented invoice generation and PDF generation to simplify billing and record keeping.) Tj
+0 -11 Td (- Working on online database integration to enable access to records across multiple computers.) Tj
+0 -11 Td (- Built using React, Vite, and JavaScript, with role-based access for owners and staff.) Tj
+/F1 10 Tf
+0 -15 Td (Swstik Numerology                                                                                2025) Tj
+/F1 9 Tf
+0 -12 Td (- Developed responsive website for personalized numerology consultations and inquiries.) Tj
+0 -11 Td (- Integrated EmailJS to send consultation requests without requiring a dedicated backend server.) Tj
+0 -11 Td (- Designed modern UI/UX interface; deployed on Vercel with HTTPS support and optimized performance.) Tj
+/F1 10 Tf
+0 -15 Td (Student Management System                                                                        2024) Tj
+/F1 9 Tf
+0 -12 Td (- Contributed to web-based Student Management System during web development training at AISECT.) Tj
+0 -11 Td (- Assisted with feature implementation, debugging, and improving functionality using PHP and MySQL.) Tj
+/F1 12 Tf
+0 -22 Td (TECHNICAL SKILLS) Tj
+/F1 9 Tf
+0 -14 Td (Programming: JavaScript, PHP, Python) Tj
+0 -12 Td (Frontend: HTML5, CSS3, React.js, Vite) Tj
+0 -12 Td (Database: PostgreSQL, MySQL, Firebase, Supabase) Tj
+0 -12 Td (Tools: Git, GitHub, Vercel, Antigravity, Cursor) Tj
+0 -12 Td (Other: Responsive Design, UI/UX, Debugging, Requirement Analysis, Project Planning) Tj
+/F1 12 Tf
+0 -20 Td (SOFT SKILLS) Tj
+/F1 9 Tf
+0 -13 Td (- Problem-solving and analytical thinking  |  Team collaboration and communication) Tj
+0 -12 Td (- Adaptability and willingness to learn    |  Time management and project coordination) Tj
 ET
 endstream
 endobj
@@ -67,5 +103,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-2381
+4987
 %%EOF

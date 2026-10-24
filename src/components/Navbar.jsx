@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, Menu, X, FileText, ArrowUpRight } from 'lucide-react';
+import { Sun, Moon, Menu, X, FileText } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData.js';
 
 export default function Navbar({ theme, toggleTheme, onOpenResume }) {
@@ -9,6 +9,7 @@ export default function Navbar({ theme, toggleTheme, onOpenResume }) {
   const navItems = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
     { label: 'Achievements', href: '#achievements' },
@@ -17,7 +18,7 @@ export default function Navbar({ theme, toggleTheme, onOpenResume }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'achievements', 'contact'];
+      const sections = ['home', 'about', 'experience', 'skills', 'projects', 'achievements', 'contact'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
@@ -50,10 +51,10 @@ export default function Navbar({ theme, toggleTheme, onOpenResume }) {
     <>
       <header className="navbar-kushal">
         <div className="container navbar-container">
-          {/* Brand - Kushal Style */}
+          {/* Brand */}
           <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="nav-brand-group">
             <span className="nav-brand-title">{personalInfo.name}</span>
-            <span className="nav-brand-subtitle">Full Stack Developer • AMTICS</span>
+            <span className="nav-brand-subtitle">B.Tech CSE • UTU Maliba</span>
           </a>
 
           {/* Centered Navigation Links */}

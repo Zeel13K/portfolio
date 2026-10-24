@@ -11,6 +11,7 @@ export default function Footer() {
   const navLinks = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Skills Matrix', href: '#skills' },
     { label: 'Selected Works', href: '#projects' },
     { label: 'Milestones', href: '#achievements' },
@@ -27,10 +28,10 @@ export default function Footer() {
               {personalInfo.name}
             </h3>
             <p style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.2em', opacity: 0.5, marginBottom: '1.25rem' }}>
-              Full Stack Developer • AMTICS
+              B.Tech CSE • Uka Tarsadia University (UTU)
             </p>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.925rem', lineHeight: 1.7, maxWidth: '380px', fontWeight: 300, marginBottom: '2rem' }}>
-              Building accessible, responsive, and performance-focused web solutions with React, JavaScript, and modern web architectures.
+              Building responsive websites, database-backed management portals, and practical software solutions.
             </p>
 
             <div className="hero-social-strip">
@@ -53,16 +54,7 @@ export default function Footer() {
                 <LinkedinIcon size={18} />
               </a>
               <a
-                href={personalInfo.socialLinks.twitter}
-                target="_blank"
-                rel="noreferrer"
-                className="social-link-btn"
-                aria-label="Twitter"
-              >
-                <TwitterIcon size={18} />
-              </a>
-              <a
-                href={personalInfo.socialLinks.email}
+                href={`mailto:${personalInfo.email}`}
                 className="social-link-btn"
                 aria-label="Email"
               >
@@ -77,7 +69,7 @@ export default function Footer() {
               Sections
             </div>
             <ul className="footer-nav-list">
-              {navLinks.slice(0, 3).map((link) => (
+              {navLinks.slice(0, 4).map((link) => (
                 <li key={link.label}>
                   <a href={link.href}>{link.label}</a>
                 </li>
@@ -91,7 +83,7 @@ export default function Footer() {
               Direct Links
             </div>
             <ul className="footer-nav-list">
-              {navLinks.slice(3).map((link) => (
+              {navLinks.slice(4).map((link) => (
                 <li key={link.label}>
                   <a href={link.href}>{link.label}</a>
                 </li>
@@ -108,7 +100,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="footer-bottom-row">
           <div>
-            &copy; {new Date().getFullYear()} {personalInfo.name} • Asha M. Tarsadia Institute of Computer Science and Technology (AMTICS)
+            &copy; {new Date().getFullYear()} {personalInfo.name} • Uka Tarsadia University (UTU), Maliba
           </div>
 
           <button onClick={scrollToTop} className="overview-link" style={{ cursor: 'pointer' }}>

@@ -17,43 +17,12 @@ import {
   Users,
   BookOpen,
   Clock,
-  GitCommit,
-  MessageSquare
+  Search,
+  CheckCircle2
 } from 'lucide-react';
-import { technicalSkills, softSkills } from '../data/portfolioData.js';
-
-const iconMap = {
-  Atom,
-  Code2,
-  Layout,
-  Palette,
-  Server,
-  Network,
-  Database,
-  Binary,
-  GitBranch,
-  Zap,
-  Smartphone,
-  Send,
-  Lightbulb,
-  Users,
-  BookOpen,
-  Clock,
-  GitCommit,
-  MessageSquare
-};
+import { technicalSkillsCategories, softSkills } from '../data/portfolioData.js';
 
 export default function Skills() {
-  const frontend = technicalSkills.filter((s) => s.category === 'frontend');
-  const backend = technicalSkills.filter((s) => s.category === 'backend');
-  const tools = technicalSkills.filter((s) => s.category === 'tools');
-
-  const categories = [
-    { title: 'Frontend Engineering', items: frontend },
-    { title: 'Backend & Data Storage', items: backend },
-    { title: 'Developer Tools & Platforms', items: tools },
-  ];
-
   return (
     <section id="skills" className="section" style={{ borderTop: '1px solid var(--border-light)' }}>
       <div className="container">
@@ -65,72 +34,65 @@ export default function Skills() {
         >
           <div className="section-accent-line"></div>
           <div className="tracking-widest-sub" style={{ marginBottom: '0.4rem' }}>
-            02 // Competencies
+            03 // Competencies
           </div>
-          <h2 className="section-title">Skills Matrix</h2>
+          <h2 className="section-title">Technical Skills Matrix</h2>
           <p className="section-sub">
-            A structured inventory of technical capabilities, developer tooling, and collaborative engineering practices.
+            Categorized technical stack, programming languages, database architectures, and engineering tools based on real production use.
           </p>
         </motion.div>
 
         <div className="skills-matrix-wrap">
-          {categories.map((cat, catIdx) => (
+          {technicalSkillsCategories.map((cat, catIdx) => (
             <motion.div
-              key={cat.title}
+              key={cat.category}
               className="skills-category-block"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: catIdx * 0.1 }}
+              transition={{ duration: 0.5, delay: catIdx * 0.08 }}
             >
-              <div className="skills-category-title">{cat.title}</div>
+              <div className="skills-category-title">{cat.category}</div>
               <div className="skills-pills-flow">
-                {cat.items.map((skill) => {
-                  const Icon = iconMap[skill.icon] || Code2;
-                  return (
-                    <motion.div
-                      key={skill.name}
-                      className="skill-matrix-pill"
-                      whileHover={{ scale: 1.04, y: -2, borderColor: 'var(--border-hover)' }}
-                      whileTap={{ scale: 0.98 }}
-                      transition={{ type: 'spring', damping: 18, stiffness: 350 }}
-                    >
-                      <Icon size={16} />
-                      <span>{skill.name}</span>
-                      <span className="skill-pill-percent">{skill.proficiency}%</span>
-                    </motion.div>
-                  );
-                })}
+                {cat.skills.map((skill) => (
+                  <motion.div
+                    key={skill}
+                    className="skill-matrix-pill"
+                    whileHover={{ scale: 1.05, y: -2, borderColor: 'var(--border-hover)' }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: 'spring', damping: 18, stiffness: 350 }}
+                  >
+                    <CheckCircle2 size={14} color="var(--accent-green)" />
+                    <span>{skill}</span>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           ))}
 
-          {/* Soft Skills Category */}
+          {/* Soft Skills Section directly from Resume */}
           <motion.div
             className="skills-category-block"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <div className="skills-category-title">Soft Skills & Practices</div>
+            <div className="skills-category-title">Soft Skills</div>
             <div className="skills-pills-flow">
-              {softSkills.map((skill) => {
-                const Icon = iconMap[skill.icon] || Lightbulb;
-                return (
-                  <motion.div
-                    key={skill.name}
-                    className="skill-matrix-pill"
-                    title={skill.description}
-                    whileHover={{ scale: 1.04, y: -2, borderColor: 'var(--border-hover)' }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ type: 'spring', damping: 18, stiffness: 350 }}
-                  >
-                    <Icon size={16} />
-                    <span>{skill.name}</span>
-                  </motion.div>
-                );
-              })}
+              {softSkills.map((skill) => (
+                <motion.div
+                  key={skill.name}
+                  className="skill-matrix-pill"
+                  title={skill.description}
+                  whileHover={{ scale: 1.05, y: -2, borderColor: 'var(--border-hover)' }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: 'spring', damping: 18, stiffness: 350 }}
+                >
+                  <Lightbulb size={14} color="var(--accent-green)" />
+                  <span>{skill.name}</span>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>

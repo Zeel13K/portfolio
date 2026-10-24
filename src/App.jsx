@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Marquee from './components/Marquee.jsx';
 import About from './components/About.jsx';
+import Experience from './components/Experience.jsx';
 import Skills from './components/Skills.jsx';
 import Projects from './components/Projects.jsx';
 import Achievements from './components/Achievements.jsx';
@@ -55,16 +56,19 @@ export default function App() {
         {/* 01 // About & Education Section */}
         <About onOpenResume={() => setIsResumeOpen(true)} />
 
-        {/* 02 // Skills Matrix */}
+        {/* 02 // Work Experience Section */}
+        <Experience />
+
+        {/* 03 // Skills Matrix */}
         <Skills />
 
-        {/* 03 // Selected Works (Projects & Modal) */}
+        {/* 04 // Selected Works (Projects & Modal) */}
         <Projects />
 
-        {/* 04 // Achievements & Milestones */}
+        {/* 05 // Achievements & Milestones */}
         <Achievements />
 
-        {/* 05 // Reach Out & Contact Form */}
+        {/* 06 // Reach Out & Contact Form */}
         <Contact />
       </main>
 

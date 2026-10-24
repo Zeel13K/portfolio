@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons.jsx';
 import { personalInfo } from '../data/portfolioData.js';
 
@@ -68,11 +68,11 @@ export default function Contact() {
         >
           <div className="section-accent-line"></div>
           <div className="tracking-widest-sub" style={{ marginBottom: '0.4rem' }}>
-            05 // Reach Out
+            06 // Reach Out
           </div>
           <h2 className="section-title">Get In Touch</h2>
           <p className="section-sub">
-            Interested in discussing an internship, open-source project collaboration, or software engineering opportunity? Reach out directly.
+            Interested in discussing an internship, web development opportunity, or software engineering project? Reach out directly.
           </p>
         </motion.div>
 
@@ -90,14 +90,14 @@ export default function Contact() {
                 icon: Mail,
                 title: 'Email Address',
                 val: personalInfo.email,
-                href: personalInfo.socialLinks.email,
+                href: `mailto:${personalInfo.email}`,
                 isLink: true
               },
               {
-                icon: LinkedinIcon,
-                title: 'LinkedIn Network',
-                val: 'linkedin.com/in/zeelkaklotar',
-                href: personalInfo.socialLinks.linkedin,
+                icon: Phone,
+                title: 'Phone Number',
+                val: personalInfo.phone,
+                href: `tel:${personalInfo.phone.replace(/\s+/g, '')}`,
                 isLink: true
               },
               {
@@ -109,7 +109,7 @@ export default function Contact() {
               },
               {
                 icon: MapPin,
-                title: 'Institution & Location',
+                title: 'Location & University',
                 val: personalInfo.college,
                 subVal: personalInfo.location,
                 isLink: false
@@ -224,7 +224,7 @@ export default function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Internship Inquiry / Project Collaboration"
+                  placeholder="Web Development / Software Project Inquiry"
                   className="form-input-kushal"
                 />
               </div>
