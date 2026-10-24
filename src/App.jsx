@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
-import Hero from './components/Hero.jsx';
-import Marquee from './components/Marquee.jsx';
+import Footer from './components/Footer.jsx';
+import ResumeModal from './components/ResumeModal.jsx';
+import ScrollProgress from './components/ScrollProgress.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
+
+// Pages
+import Home from './pages/Home.jsx';
 import About from './components/About.jsx';
 import Experience from './components/Experience.jsx';
 import Skills from './components/Skills.jsx';
 import Projects from './components/Projects.jsx';
 import Achievements from './components/Achievements.jsx';
 import Contact from './components/Contact.jsx';
-import Footer from './components/Footer.jsx';
-import ResumeModal from './components/ResumeModal.jsx';
-import ScrollProgress from './components/ScrollProgress.jsx';
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -30,56 +33,46 @@ export default function App() {
   };
 
   return (
-    <div className="portfolio-app">
-      {/* Top Reading Scroll Progress Animation */}
-      <ScrollProgress />
+    <HashRouter>
+      <ScrollToTop />
+      <div className="portfolio-app">
+        {/* Top Reading Scroll Progress Animation */}
+        <ScrollProgress />
 
-      {/* Floating Ambient Glow Meshes */}
-      <div className="ambient-glow-mesh"></div>
-      <div className="ambient-glow-mesh-2"></div>
+        {/* Floating Ambient Glow Meshes */}
+        <div className="ambient-glow-mesh"></div>
+        <div className="ambient-glow-mesh-2"></div>
 
-      {/* Fixed Navigation Bar */}
-      <Navbar
-        theme={theme}
-        toggleTheme={toggleTheme}
-        onOpenResume={() => setIsResumeOpen(true)}
-      />
+        {/* Fixed Navigation Bar */}
+        <Navbar
+          theme={theme}
+          toggleTheme={toggleTheme}
+          onOpenResume={() => setIsResumeOpen(true)}
+        />
 
-      {/* Main Content Sections */}
-      <main>
-        {/* Home / Hero Section */}
-        <Hero onOpenResume={() => setIsResumeOpen(true)} />
+        {/* Multi-Page Routes: Home only shows Home details; other pages shown individually */}
+        <main>
+          <Routes>
+            <Route path="/" element={<Home onOpenResume={() => setIsResumeOpen(true)} />} />
+            <Route path="/about" element={<About onOpenResume={() => setIsResumeOpen(true)} />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/achievements" element={<Achievements />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
 
-        {/* Animated Marquee Ticker */}
-        <Marquee />
+        {/* Footer */}
+        <Footer />
 
-        {/* 01 // About & Education Section */}
-        <About onOpenResume={() => setIsResumeOpen(true)} />
-
-        {/* 02 // Work Experience Section */}
-        <Experience />
-
-        {/* 03 // Skills Matrix */}
-        <Skills />
-
-        {/* 04 // Selected Works (Projects & Modal) */}
-        <Projects />
-
-        {/* 05 // Achievements & Milestones */}
-        <Achievements />
-
-        {/* 06 // Reach Out & Contact Form */}
-        <Contact />
-      </main>
-
-      {/* Footer */}
-      <Footer />
-
-      {/* Animated Interactive Resume Modal */}
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-      />
-    </div>
+        {/* Animated Interactive Resume Modal */}
+        <ResumeModal
+          isOpen={isResumeOpen}
+          onClose={() => setIsResumeOpen(false)}
+        />
+      </div>
+    </HashRouter>
   );
 }

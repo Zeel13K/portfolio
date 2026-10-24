@@ -1,74 +1,47 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Sun, Moon, Menu, X, FileText } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData.js';
 
 export default function Navbar({ theme, toggleTheme, onOpenResume }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Achievements', href: '#achievements' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Experience', path: '/experience' },
+    { label: 'Skills', path: '/skills' },
+    { label: 'Projects', path: '/projects' },
+    { label: 'Achievements', path: '/achievements' },
+    { label: 'Contact', path: '/contact' },
   ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'experience', 'skills', 'projects', 'achievements', 'contact'];
-      const scrollPosition = window.scrollY + 120;
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
-    setMobileMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <>
       <header className="navbar-kushal">
         <div className="container navbar-container">
           {/* Brand */}
-          <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="nav-brand-group">
+          <Link to="/" onClick={() => setMobileMenuOpen(false)} className="nav-brand-group">
             <span className="nav-brand-title">{personalInfo.name}</span>
-          </a>
+            <span className="nav-brand-subtitle">B.Tech CSE • UTU Maliba</span>
+          </Link>
 
           {/* Centered Navigation Links */}
           <ul className="nav-links-center">
             {navItems.map((item) => {
-              const isActive = activeSection === item.href.slice(1);
+              const isActive = item.path === '/'
+                ? location.pathname === '/'
+                : location.pathname.startsWith(item.path);
+
               return (
                 <li key={item.label}>
-                  <a
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
+                  <NavLink
+                    to={item.path}
                     className={`nav-link-item ${isActive ? 'active' : ''}`}
                   >
                     {item.label}
-                  </a>
+                  </NavLink>
                 </li>
               );
             })}
@@ -106,13 +79,13 @@ export default function Navbar({ theme, toggleTheme, onOpenResume }) {
         <ul className="mobile-menu-items">
           {navItems.map((item) => (
             <li key={item.label}>
-              <a
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={`mobile-menu-link ${activeSection === item.href.slice(1) ? 'active' : ''}`}
+              <NavLink
+                to={item.path}
+                onClick={() => setMobileMenuOpen(false)}
+                className={({ isActive }) => `mobile-menu-link ${isActive ? 'active' : ''}`}
               >
                 {item.label}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>

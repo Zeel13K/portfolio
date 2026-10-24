@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUp, Mail } from 'lucide-react';
 import { GithubIcon } from './Icons.jsx';
 import { personalInfo } from '../data/portfolioData.js';
@@ -9,13 +10,13 @@ export default function Footer() {
   };
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Skills Matrix', href: '#skills' },
-    { label: 'Selected Works', href: '#projects' },
-    { label: 'Milestones', href: '#achievements' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Experience', path: '/experience' },
+    { label: 'Skills Matrix', path: '/skills' },
+    { label: 'Selected Works', path: '/projects' },
+    { label: 'Milestones', path: '/achievements' },
+    { label: 'Contact', path: '/contact' },
   ];
 
   return (
@@ -62,7 +63,7 @@ export default function Footer() {
             <ul className="footer-nav-list">
               {navLinks.slice(0, 4).map((link) => (
                 <li key={link.label}>
-                  <a href={link.href}>{link.label}</a>
+                  <Link to={link.path}>{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -76,7 +77,7 @@ export default function Footer() {
             <ul className="footer-nav-list">
               {navLinks.slice(4).map((link) => (
                 <li key={link.label}>
-                  <a href={link.href}>{link.label}</a>
+                  <Link to={link.path}>{link.label}</Link>
                 </li>
               ))}
               <li>

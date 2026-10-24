@@ -1,39 +1,35 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Download, ArrowUpRight, Mail, Sparkles } from 'lucide-react';
 import { GithubIcon } from './Icons.jsx';
 import { personalInfo } from '../data/portfolioData.js';
 
 export default function Hero({ onOpenResume }) {
-  const handleScrollTo = (e, id) => {
-    e.preventDefault();
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const overviewCards = [
     {
       num: '01',
       tag: 'Background',
       heading: 'Who I Am',
-      desc: 'B.Tech CSE student at UTU Maliba with a Diploma in IT (8.76 CGPA), passionate about web development and practical technology solutions.',
-      cta: 'Profile',
-      target: '#about'
+      desc: 'B.Tech CSE student at UTU Maliba with a Diploma in IT, passionate about web development and practical technology solutions.',
+      cta: 'View Profile',
+      path: '/about'
     },
     {
       num: '02',
       tag: 'Experience',
       heading: 'Work & Training',
       desc: 'Freelance web development experience and AISECT trainee background developing full-stack database-driven management systems.',
-      cta: 'Experience',
-      target: '#experience'
+      cta: 'View Experience',
+      path: '/experience'
     },
     {
       num: '03',
       tag: 'Selected Works',
       heading: 'Key Projects',
       desc: 'Production management systems including Mavtar Printing Press, Swstik Numerology (Vercel), and Student Management System.',
-      cta: 'View Works',
-      target: '#projects'
+      cta: 'Explore Projects',
+      path: '/projects'
     },
     {
       num: '04',
@@ -41,7 +37,7 @@ export default function Hero({ onOpenResume }) {
       heading: 'Skills Matrix',
       desc: 'Hands-on programming with JavaScript, PHP, Python, React.js, Vite, PostgreSQL, MySQL, and modern cloud deployment tools.',
       cta: 'Skills Matrix',
-      target: '#skills'
+      path: '/skills'
     }
   ];
 
@@ -79,7 +75,11 @@ export default function Hero({ onOpenResume }) {
           animate="visible"
         >
           {/* Availability Badge */}
-        
+          <motion.div variants={itemVariants} className="status-badge-kushal">
+            <span className="pulse-emerald"></span>
+            <span>Available for Web Development & Software Engineering Opportunities</span>
+          </motion.div>
+
           {/* Giant Headline */}
           <motion.h1
             variants={itemVariants}
@@ -117,16 +117,21 @@ export default function Hero({ onOpenResume }) {
               <span>Interactive Resume</span>
             </motion.button>
 
-            <motion.a
-              href="#projects"
-              onClick={(e) => handleScrollTo(e, '#projects')}
+            <Link
+              to="/projects"
               className="btn-kushal btn-kushal-outline"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
             >
               <span>Explore Projects</span>
               <ArrowUpRight size={17} />
-            </motion.a>
+            </Link>
+
+            <Link
+              to="/contact"
+              className="btn-kushal btn-kushal-outline"
+            >
+              <span>Get in Touch</span>
+              <ArrowUpRight size={17} />
+            </Link>
           </motion.div>
 
           {/* Social Links Strip */}
@@ -162,7 +167,7 @@ export default function Hero({ onOpenResume }) {
             </motion.a>
           </motion.div>
 
-          {/* Numbered Overview Cards */}
+          {/* Numbered Overview Cards - Navigate to Dedicated Pages */}
           <motion.div variants={itemVariants} className="overview-grid">
             {overviewCards.map((c) => (
               <motion.div
@@ -177,19 +182,18 @@ export default function Hero({ onOpenResume }) {
                   <h3 className="overview-heading">{c.heading}</h3>
                   <p className="overview-desc">{c.desc}</p>
                 </div>
-                <a
-                  href={c.target}
-                  onClick={(e) => handleScrollTo(e, c.target)}
+                <Link
+                  to={c.path}
                   className="overview-link"
                 >
                   <span>{c.cta}</span>
                   <ArrowUpRight size={14} />
-                </a>
+                </Link>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* Stats Strip */}
+          {/* Stats Strip - Professional Developer Metrics (Replaced Marks) */}
           <motion.div
             variants={itemVariants}
             className="stats-strip"

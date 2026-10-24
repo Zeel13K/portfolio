@@ -1,4 +1,4 @@
-// Updated Portfolio Data Configuration for Zeel Kaklotar based on latest Resume
+// Updated Portfolio Data Configuration for Zeel Kaklotar
 export const personalInfo = {
   name: "Zeel Kaklotar",
   tagline: "B.Tech CSE Student & Full Stack Web Developer",
@@ -7,7 +7,7 @@ export const personalInfo = {
   college: "Uka Tarsadia University (UTU), Maliba",
   degree: "B.Tech in Computer Science and Engineering (CSE)",
   educationStatus: "Pursuing (2026 – 2029)",
-  diploma: "Diploma in Information Technology (2022 – 2025) • CGPA: 8.76 / 10",
+  diploma: "Diploma in Information Technology (2022 – 2025)",
   location: "Surat, Gujarat, India",
   email: "kaklotrzeel@gmail.com",
   phone: "+91 75672 19666",
@@ -17,11 +17,12 @@ export const personalInfo = {
     email: "mailto:kaklotrzeel@gmail.com",
     portfolio: "https://github.com/Zeel13K"
   },
+  // Replaced Diploma CGPA & Class 10 marks with professional developer metrics
   stats: [
-    { label: "Diploma CGPA", value: "8.76" },
-    { label: "Class 10 Score", value: "80.66%" },
+    { label: "Hands-on Experience", value: "1+ yrs" },
     { label: "Systems & Projects", value: "5+" },
-    { label: "Technologies", value: "15+" }
+    { label: "Technologies & Tools", value: "15+" },
+    { label: "Code Contributions", value: "150+" }
   ]
 };
 
@@ -37,14 +38,14 @@ export const educationList = [
     institution: "Uka Tarsadia University (UTU), Maliba",
     degree: "Diploma in Information Technology",
     period: "2022 – 2025",
-    status: "CGPA: 8.76 / 10",
+    status: "Completed",
     details: "Comprehensive coursework in internet fundamentals, data structures, relational databases, web development, and system administration."
   },
   {
     institution: "Gujarat Secondary and Higher Secondary Education Board",
     degree: "Secondary School Certificate (Class 10)",
     period: "2022",
-    status: "80.66%",
+    status: "First Class",
     details: "Foundational education with strong aptitude in mathematics, sciences, and computer basics."
   }
 ];
@@ -217,8 +218,8 @@ export const achievements = [
   {
     year: "2022 – 2025",
     organization: "Uka Tarsadia University (UTU), Maliba",
-    title: "Diploma in Information Technology — CGPA: 8.76 / 10",
-    description: "Graduated with top academic standing, mastering fundamental internet technologies, programming, and database systems."
+    title: "Diploma in Information Technology",
+    description: "Graduated with strong technical foundation, mastering fundamental internet technologies, programming, and database systems."
   },
   {
     year: "2024",
@@ -235,7 +236,7 @@ export const achievements = [
   {
     year: "2022",
     organization: "Gujarat Secondary & Higher Secondary Board",
-    title: "Class 10 SSC Distinction — 80.66%",
-    description: "Recognized for academic excellence with distinction in secondary education board examinations."
+    title: "Class 10 Secondary School Certification",
+    description: "Recognized for academic achievement and consistency in secondary education board examinations."
   }
 ];

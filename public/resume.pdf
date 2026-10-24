@@ -12,14 +12,14 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 5 0 obj
-<< /Length 4624 >>
+<< /Length 4635 >>
 stream
 BT
 /F1 20 Tf
 50 740 Td (ZEEL KAKLOTAR) Tj
 /F1 10 Tf
 0 -20 Td (Surat, Gujarat, India  |  +91 75672 19666  |  kaklotrzeel@gmail.com) Tj
-0 -14 Td (GitHub: https://github.com/Zeel13K  |  Portfolio: https://github.com/Zeel13K) Tj
+0 -14 Td (GitHub: https://github.com/Zeel13K  |  Portfolio: https://zeel13k.github.io/portfolio/) Tj
 0 -20 Td (------------------------------------------------------------------------------------------------------------------) Tj
 /F1 12 Tf
 0 -18 Td (PROFESSIONAL SUMMARY) Tj
@@ -36,13 +36,19 @@ BT
 /F1 10 Tf
 0 -15 Td (Uka Tarsadia University (UTU), Maliba                                                    2022 - 2025) Tj
 /F1 9 Tf
-0 -12 Td (Diploma in Information Technology                                                        CGPA: 8.76/10) Tj
+0 -12 Td (Diploma in Information Technology                                                        Completed) Tj
 /F1 10 Tf
 0 -15 Td (Gujarat Secondary and Higher Secondary Education Board                                           2022) Tj
 /F1 9 Tf
-0 -12 Td (Class 10 (Secondary Education)                                                           80.66%) Tj
+0 -12 Td (Class 10 (Secondary Education)                                                           First Class) Tj
 /F1 12 Tf
 0 -22 Td (WORK EXPERIENCE) Tj
+/F1 10 Tf
+0 -15 Td (Freelance Web Developer / Independent Projects                                       2024 - Present) Tj
+/F1 9 Tf
+0 -12 Td (- Designed and developed responsive websites and web applications based on project requirements.) Tj
+0 -11 Td (- Worked on user interfaces, application functionality, and integration of online services.) Tj
+0 -11 Td (- Practiced frontend development, debugging, cross-browser testing, and project planning.) Tj
 /F1 10 Tf
 0 -15 Td (Web Development Trainee - AISECT                                               May 2024 - June 2024) Tj
 /F1 9 Tf
@@ -50,12 +56,6 @@ BT
 0 -11 Td (- Contributed to the development and maintenance of a Student Management System.) Tj
 0 -11 Td (- Assisted in implementing features, troubleshooting issues, and improving application functionality.) Tj
 0 -11 Td (- Developed an understanding of web applications and collaborative software development workflows.) Tj
-/F1 10 Tf
-0 -15 Td (Freelance Web Developer / Independent Projects                                       2024 - Present) Tj
-/F1 9 Tf
-0 -12 Td (- Designed and developed responsive websites and web applications based on project requirements.) Tj
-0 -11 Td (- Worked on user interfaces, application functionality, and integration of online services.) Tj
-0 -11 Td (- Practiced frontend development, debugging, cross-browser testing, and project planning.) Tj
 /F1 12 Tf
 0 -22 Td (PROJECTS) Tj
 /F1 10 Tf
@@ -103,5 +103,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-4987
+4998
 %%EOF
