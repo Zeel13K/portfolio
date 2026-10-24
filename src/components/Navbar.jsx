@@ -54,7 +54,6 @@ export default function Navbar({ theme, toggleTheme, onOpenResume }) {
           {/* Brand */}
           <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="nav-brand-group">
             <span className="nav-brand-title">{personalInfo.name}</span>
-            <span className="nav-brand-subtitle">B.Tech CSE • UTU Maliba</span>
           </a>
 
           {/* Centered Navigation Links */}

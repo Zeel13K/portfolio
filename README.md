@@ -12,7 +12,7 @@ Built with **React JS**, **Vite**, and pure modern CSS (with theme switcher, res
   - Student photo/avatar with modern glowing badge effects.
   - Tagline, bio, and college info (AMTICS, UTU).
   - Quick stat counters (Projects completed, CGPA, GitHub activity).
-  - Social media badges (GitHub, LinkedIn, Email).
+  - Social media badges (GitHub, Email).
 - **Skills Section:**
   - Technical skills categorized by Frontend, Backend & Database, and Tools.
   - Visual animated proficiency progress bars.
@@ -26,7 +26,7 @@ Built with **React JS**, **Vite**, and pure modern CSS (with theme switcher, res
   - Hackathon achievements, certifications, and academic excellence recognitions.
 - **Contact Section:**
   - Interactive contact form with validation and submit confirmation.
-  - Clickable contact cards for direct Email, LinkedIn, GitHub, and College Location.
+  - Clickable contact cards for direct Email, Phone, GitHub, and College Location.
 - **Working Resume Download & Preview:**
   - Working button to download `resume.pdf` in PDF format.
   - Interactive "View Resume" modal preview with quick options to open or save the PDF.
@@ -67,7 +67,7 @@ Git&Github/
 │   │   ├── Contact.jsx         # Contact form & social cards
 │   │   ├── Footer.jsx          # Footer & copyright
 │   │   ├── Hero.jsx            # Home / Hero section
-│   │   ├── Icons.jsx           # SVG brand icons (GitHub, LinkedIn, Twitter)
+│   │   ├── Icons.jsx           # SVG brand icons (GitHub, Twitter)
 │   │   ├── Navbar.jsx          # Responsive navbar & mobile menu
 │   │   ├── Projects.jsx        # Project cards & category filter
 │   │   ├── ResumeModal.jsx     # Interactive resume modal & PDF preview

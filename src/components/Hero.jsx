@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, ArrowUpRight, Mail, Sparkles } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './Icons.jsx';
+import { GithubIcon } from './Icons.jsx';
 import { personalInfo } from '../data/portfolioData.js';
 
 export default function Hero({ onOpenResume }) {
@@ -79,11 +79,7 @@ export default function Hero({ onOpenResume }) {
           animate="visible"
         >
           {/* Availability Badge */}
-          <motion.div variants={itemVariants} className="status-badge-kushal">
-            <span className="pulse-emerald"></span>
-            <span>Available for Web Development & Software Engineering Opportunities</span>
-          </motion.div>
-
+        
           {/* Giant Headline */}
           <motion.h1
             variants={itemVariants}
@@ -138,7 +134,6 @@ export default function Hero({ onOpenResume }) {
             <span className="tracking-widest-sub">Connect:</span>
             {[
               { icon: GithubIcon, href: personalInfo.socialLinks.github, label: 'GitHub' },
-              { icon: LinkedinIcon, href: personalInfo.socialLinks.linkedin, label: 'LinkedIn' },
             ].map((soc, i) => {
               const Icon = soc.icon;
               return (

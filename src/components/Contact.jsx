@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send, CheckCircle2, AlertCircle } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './Icons.jsx';
+import { GithubIcon } from './Icons.jsx';
 import { personalInfo } from '../data/portfolioData.js';
 
 export default function Contact() {

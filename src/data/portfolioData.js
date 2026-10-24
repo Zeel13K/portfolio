@@ -14,7 +14,6 @@ export const personalInfo = {
   resumeUrl: "./resume.pdf",
   socialLinks: {
     github: "https://github.com/Zeel13K",
-    linkedin: "https://linkedin.com/in/zeelkaklotar",
     email: "mailto:kaklotrzeel@gmail.com",
     portfolio: "https://github.com/Zeel13K"
   },
