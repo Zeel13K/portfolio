@@ -15,7 +15,6 @@ export default function Footer() {
     { label: 'Experience', path: '/experience' },
     { label: 'Skills Matrix', path: '/skills' },
     { label: 'Selected Works', path: '/projects' },
-    { label: 'Milestones', path: '/achievements' },
     { label: 'Contact', path: '/contact' },
   ];
 

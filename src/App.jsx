@@ -12,7 +12,6 @@ import About from './components/About.jsx';
 import Experience from './components/Experience.jsx';
 import Skills from './components/Skills.jsx';
 import Projects from './components/Projects.jsx';
-import Achievements from './components/Achievements.jsx';
 import Contact from './components/Contact.jsx';
 
 export default function App() {
@@ -58,7 +57,6 @@ export default function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/achievements" element={<Achievements />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

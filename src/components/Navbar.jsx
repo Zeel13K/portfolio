@@ -13,7 +13,6 @@ export default function Navbar({ theme, toggleTheme, onOpenResume }) {
     { label: 'Experience', path: '/experience' },
     { label: 'Skills', path: '/skills' },
     { label: 'Projects', path: '/projects' },
-    { label: 'Achievements', path: '/achievements' },
     { label: 'Contact', path: '/contact' },
   ];
 
@@ -24,7 +23,6 @@ export default function Navbar({ theme, toggleTheme, onOpenResume }) {
           {/* Brand */}
           <Link to="/" onClick={() => setMobileMenuOpen(false)} className="nav-brand-group">
             <span className="nav-brand-title">{personalInfo.name}</span>
-            <span className="nav-brand-subtitle">B.Tech CSE • UTU Maliba</span>
           </Link>
 
           {/* Centered Navigation Links */}

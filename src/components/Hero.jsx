@@ -74,13 +74,7 @@ export default function Hero({ onOpenResume }) {
           initial="hidden"
           animate="visible"
         >
-          {/* Availability Badge */}
-          <motion.div variants={itemVariants} className="status-badge-kushal">
-            <span className="pulse-emerald"></span>
-            <span>Available for Web Development & Software Engineering Opportunities</span>
-          </motion.div>
-
-          {/* Giant Headline */}
+         {/* Giant Headline */}
           <motion.h1
             variants={itemVariants}
             className="hero-giant-name"

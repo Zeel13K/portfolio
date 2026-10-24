@@ -213,30 +213,3 @@ export const projects = [
     ]
   }
 ];
-
-export const achievements = [
-  {
-    year: "2022 – 2025",
-    organization: "Uka Tarsadia University (UTU), Maliba",
-    title: "Diploma in Information Technology",
-    description: "Graduated with strong technical foundation, mastering fundamental internet technologies, programming, and database systems."
-  },
-  {
-    year: "2024",
-    organization: "AISECT Web Development Training",
-    title: "Web Development Trainee Certification",
-    description: "Successfully completed hands-on industry training in PHP web development and contributed to the Student Management System."
-  },
-  {
-    year: "2024 – Present",
-    organization: "Freelance & Independent Client Practice",
-    title: "Production Client Web Deliveries",
-    description: "Successfully built and deployed production web applications like Swstik Numerology (Vercel) and Mavtar Printing Press Management."
-  },
-  {
-    year: "2022",
-    organization: "Gujarat Secondary & Higher Secondary Board",
-    title: "Class 10 Secondary School Certification",
-    description: "Recognized for academic achievement and consistency in secondary education board examinations."
-  }
-];

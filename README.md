@@ -22,8 +22,8 @@ Built with **React JS**, **Vite**, and pure modern CSS (with theme switcher, res
   - 4 detailed sample projects (EduTrack, CampusConnect, DevFolio, TaskFlow).
   - Category filter tabs (All, Full Stack, React App, Tools & Utilities, Web App).
   - Project tags, key highlights, GitHub source code links, and Live demo links.
-- **Achievements & Certifications:**
-  - Hackathon achievements, certifications, and academic excellence recognitions.
+- **Experience Section:**
+  - Freelance web development practice and AISECT trainee work experience.
 - **Contact Section:**
   - Interactive contact form with validation and submit confirmation.
   - Clickable contact cards for direct Email, Phone, GitHub, and College Location.
@@ -63,7 +63,7 @@ Git&Github/
 ├── src/
 │   ├── components/
 │   │   ├── About.jsx           # About & Education section
-│   │   ├── Achievements.jsx    # Milestones & honors section
+│   │   ├── Experience.jsx      # Work experience & traineeship section
 │   │   ├── Contact.jsx         # Contact form & social cards
 │   │   ├── Footer.jsx          # Footer & copyright
 │   │   ├── Hero.jsx            # Home / Hero section
